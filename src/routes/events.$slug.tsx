@@ -73,7 +73,7 @@ function EventDetail() {
           <p className="script-heading text-2xl">Highlights</p>
           <h2 className="mt-1 font-display text-2xl text-primary">What's included</h2>
           <ul className="mt-5 space-y-3 text-sm text-foreground/85">
-            {event.highlights.map((h) => (
+            {event.highlights.map((h: string) => (
               <li key={h} className="flex gap-2.5"><Check size={16} className="mt-0.5 shrink-0 text-accent" />{h}</li>
             ))}
           </ul>
@@ -82,7 +82,7 @@ function EventDetail() {
           <p className="script-heading text-2xl">More on offer</p>
           <h2 className="mt-1 font-display text-2xl text-primary">Pair it with</h2>
           <ul className="mt-5 space-y-3 text-sm text-foreground/85">
-            {event.inclusions.map((h) => (
+            {event.inclusions.map((h: string) => (
               <li key={h} className="flex gap-2.5"><Sparkles size={14} className="mt-1 shrink-0 text-accent" />{h}</li>
             ))}
           </ul>
