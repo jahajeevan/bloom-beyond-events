@@ -3,10 +3,10 @@ import { ArrowLeft, Check, Sparkles } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { RegistrationForm } from "@/components/RegistrationForm";
-import { EVENTS } from "@/lib/events-data";
+import { EVENTS, type EventInfo } from "@/lib/events-data";
 
 export const Route = createFileRoute("/events/$slug")({
-  loader: ({ params }) => {
+  loader: ({ params }): { event: EventInfo } => {
     const event = EVENTS.find((e) => e.slug === params.slug);
     if (!event) throw notFound();
     return { event };
